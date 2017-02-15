@@ -1,11 +1,6 @@
-from cmath import sqrt
+x1, y1 = map(float, input().split())
+x2, y2 = map(float, input().split())
 
-x1 = float(input())
-x2 = float(input())
-y1 = float(input())
-y2 = float(input())
+d = (((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5)
 
-d = sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
-
-print("%.4f" % d)
-
+print("%.4f" % float(d))
