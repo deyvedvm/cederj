@@ -1,0 +1,8 @@
+4 3
+OsBotoes
+LeoNoFutebol
+Cacareco
+ClubeDoJuca
+OsBotoes 6 x 0 Cacareco
+Cacareco 0 x 2 ClubeDoJuca
+Cacareco 0 x 2 LeoNoFutebol
