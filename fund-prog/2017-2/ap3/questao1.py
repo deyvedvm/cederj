@@ -24,13 +24,43 @@ explicitamente um dos algoritmos de ordenação vistos em aula. Será atribuído
 rotinas prontas de ordenação
 """
 
+
+def ordena(a, b):
+    if a % 10 == 0:
+        if b % 10 == 0:
+            return a < b
+        return True
+    else:
+        if b % 10 == 0:
+            return False
+        return a > b
+
+
+def multiplos10Crescente(a, b):
+    None
+
+
+def demaisNumerosDecrescente(a, b):
+    None
+
+
 # Main
 
 quantidade_de_numeros = int(input())
 
-numeros_lidos = []
+numeros = []
 
 for indice in range(quantidade_de_numeros):
-    numeros_lidos.append(int(input()))
+    numeros.append(int(input()))
 
-for indice in range(len(quantidade_de_numeros) - 1):
+print(numeros)
+
+for indice in range(len(numeros) - 1):
+    temp = indice
+    for j in range(indice + 1, len(numeros)):
+        if ordena(numeros[j], numeros[temp]):
+            temp = j
+    numeros[indice], numeros[temp] = numeros[temp], numeros[indice]
+
+for indice in range(quantidade_de_numeros):
+    print(numeros[indice])
