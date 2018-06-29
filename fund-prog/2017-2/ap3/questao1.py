@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 Considerando a entrada de valores inteiros não negativos, ordene estes valores segundo o seguinte critério:
 
@@ -25,42 +26,52 @@ rotinas prontas de ordenação
 """
 
 
-def ordena(a, b):
-    if a % 10 == 0:
-        if b % 10 == 0:
-            return a < b
-        return True
-    else:
-        if b % 10 == 0:
-            return False
-        return a > b
+def multiplos10Crescente(numeros):
+    for i in range(len(numeros)):
+        pivo = i
+        for j in range(i + 1, len(numeros)):
+            if numeros[j] < numeros[pivo]:
+                pivo = j
+        numeros[i], numeros[pivo] = numeros[pivo], numeros[i]
+
+    return numeros
 
 
-def multiplos10Crescente(a, b):
-    None
+def demaisNumerosDecrescente(numeros):
+    for i in range(len(numeros)):
+        pivo = i
+        for j in range(i + 1, len(numeros)):
+            if numeros[j] > numeros[pivo]:
+                pivo = j
+        numeros[i], numeros[pivo] = numeros[pivo], numeros[i]
 
-
-def demaisNumerosDecrescente(a, b):
-    None
+    return numeros
 
 
 # Main
 
 quantidade_de_numeros = int(input())
 
-numeros = []
+numero = 0
+
+numeros_multiplos10 = []
+
+outros_numeros = []
 
 for indice in range(quantidade_de_numeros):
-    numeros.append(int(input()))
+    numero = int(input())
 
-print(numeros)
+    if numero % 10 == 0:
+        numeros_multiplos10.append(numero)
+    else:
+        outros_numeros.append(numero)
 
-for indice in range(len(numeros) - 1):
-    temp = indice
-    for j in range(indice + 1, len(numeros)):
-        if ordena(numeros[j], numeros[temp]):
-            temp = j
-    numeros[indice], numeros[temp] = numeros[temp], numeros[indice]
+multiplos10Crescente(numeros_multiplos10)
 
-for indice in range(quantidade_de_numeros):
-    print(numeros[indice])
+demaisNumerosDecrescente(outros_numeros)
+
+for indice in range(len(numeros_multiplos10)):
+    print(numeros_multiplos10[indice])
+
+for indice in range(len(outros_numeros)):
+    print(outros_numeros[indice])
