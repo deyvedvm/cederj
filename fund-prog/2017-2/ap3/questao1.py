@@ -26,7 +26,9 @@ rotinas prontas de ordenação
 """
 
 
-def multiplos10Crescente(numeros):
+def ordena_numeros(numeros, ordem):
+    ascendente = ordem
+
     for i in range(len(numeros)):
         pivo = i
         for j in range(i + 1, len(numeros)):
@@ -34,18 +36,15 @@ def multiplos10Crescente(numeros):
                 pivo = j
         numeros[i], numeros[pivo] = numeros[pivo], numeros[i]
 
-    return numeros
+    if ascendente:
+        return numeros
+    else:
+        return numeros.reverse()
 
 
-def demaisNumerosDecrescente(numeros):
-    for i in range(len(numeros)):
-        pivo = i
-        for j in range(i + 1, len(numeros)):
-            if numeros[j] > numeros[pivo]:
-                pivo = j
-        numeros[i], numeros[pivo] = numeros[pivo], numeros[i]
-
-    return numeros
+def imprime_numeros(numeros):
+    for indice_local in range(len(numeros)):
+        print(numeros[indice_local])
 
 
 # Main
@@ -54,7 +53,7 @@ quantidade_de_numeros = int(input())
 
 numero = 0
 
-numeros_multiplos10 = []
+numeros_multiplos_10 = []
 
 outros_numeros = []
 
@@ -62,16 +61,14 @@ for indice in range(quantidade_de_numeros):
     numero = int(input())
 
     if numero % 10 == 0:
-        numeros_multiplos10.append(numero)
+        numeros_multiplos_10.append(numero)
     else:
         outros_numeros.append(numero)
 
-multiplos10Crescente(numeros_multiplos10)
+ordena_numeros(numeros_multiplos_10, True)
 
-demaisNumerosDecrescente(outros_numeros)
+ordena_numeros(outros_numeros, False)
 
-for indice in range(len(numeros_multiplos10)):
-    print(numeros_multiplos10[indice])
+imprime_numeros(numeros_multiplos_10)
 
-for indice in range(len(outros_numeros)):
-    print(outros_numeros[indice])
+imprime_numeros(outros_numeros)
