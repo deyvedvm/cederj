@@ -8,11 +8,11 @@ public class Pauta {
 
     private Aluno[] alunos;
 
-    public Pauta(int i, int i1, Turma turma) {
+    public Pauta(int mes, int dia, Turma turma) {
 
     }
 
-    public void marcarFalta(Integer matricula, Integer i, Integer dia) {
+    public void marcarFalta(Integer matricula, Integer mes, Integer dia) {
 
     }
 }
