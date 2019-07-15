@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 
 Faça um programa, contendo subprogramas, que:
