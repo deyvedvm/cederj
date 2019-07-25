@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 
 A função fatorial duplo é definida como o produto de todos os números naturais ímpares de 1 até algum número natural
