@@ -1,14 +1,22 @@
 numbers = [6, 3, 7, 5, 8, 9, 1, 2]
 
+
+def reversingSequence(sequence):
+    floor = int(len(sequence) / 2)
+
+    for index in range(floor):
+        temporaryVariable = sequence[index]
+        sequence[index] = numbers[len(sequence) - index - 1]
+        sequence[len(sequence) - index - 1] = temporaryVariable
+    return sequence
+
+
+# print(numbers)
+
+# print(numbers[::-1])
+
 print(numbers)
 
-print(numbers[::-1])
+invertedNumbers = reversingSequence(numbers)
 
-floor = int(len(numbers) / 2)
-
-for index in range(floor):
-    temporaryVariable = numbers[index]
-    numbers[index] = numbers[len(numbers) - index - 1]
-    numbers[len(numbers) - index - 1] = temporaryVariable
-
-print(numbers)
+print(invertedNumbers)
