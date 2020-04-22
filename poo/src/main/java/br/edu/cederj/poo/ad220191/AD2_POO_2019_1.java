@@ -16,7 +16,7 @@ public class AD2_POO_2019_1 {
 
         Pauta pauta = new Pauta(3, 6, turma);
 
-        pauta.marcarFalta(111, 3, 5); // Não entedi o que seria esse segundo parametro
+        pauta.marcarFalta(111, 3, 5);
         pauta.marcarFalta(111, 3, 12);
         pauta.marcarFalta(111, 3, 21);
         pauta.marcarFalta(111, 3, 26);
@@ -35,22 +35,22 @@ public class AD2_POO_2019_1 {
         pauta.marcarFalta(222, 4, 25);
         pauta.marcarFalta(222, 4, 30);
 
-//        pauta.imprimir();
+        pauta.imprimir();
 
         for (Aluno aluno : turma.getAlunos()) {
 
-//            int totalFaltas = pauta.totalFaltasAluno(aluno.getMatricula());
+            int totalFaltas = pauta.totalFaltasAluno(aluno.getMatricula());
 
-//            System.out.print(String.format("%-44s", aluno.toString()) + " " + "#faltas = " + String.format("%2d", totalFaltas));
+            System.out.print(String.format("%-44s", aluno.toString()) + " " + "#faltas = " + String.format("%2d", totalFaltas));
 
-            /*if (pauta.verificarReprovacaoPorFalta(aluno.getMatricula())) {
+            if (pauta.verificarReprovacaoPorFalta(aluno.getMatricula())) {
 
                 System.out.println(" Presença: reprovado");
 
             } else {
 
                 System.out.println(" Presença: normal");
-            }*/
+            }
         }
     }
 }

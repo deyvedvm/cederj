@@ -18,7 +18,8 @@ public class Turma {
         this.nome = nome;
         this.codigo = codigo;
         this.periodo = periodo;
-        this.tamanho = tamanho;
+        this.tamanho = 0;
+        this.alunos = new Aluno[tamanho];
     }
 
     public boolean inserirAluno(Aluno aluno) {
@@ -65,6 +66,15 @@ public class Turma {
     }
 
     public Aluno[] getAlunos() {
+
+        Aluno[] alunos = new Aluno[tamanho];
+
+        for (Aluno aluno : this.alunos) {
+
+            if (aluno != null) {
+            }
+        }
+
         return alunos;
     }
 
