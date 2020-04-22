@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: UTF-8
 #
-## @package DNAStrand
+# @package DNAStrand
 #
 #   Playing with string matching.
 #
